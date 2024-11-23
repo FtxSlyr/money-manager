@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Money Manager</title>
+    <link rel="icon" href="f.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-left">
+                <li><a href="#">Money Manager</a></li>
+            </ul>
+            <div id="balance-display">Balance: <span id="balance">0</span></div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="history-section">
+            <h2>History</h2>
+            <div id="history-container"></div>
+        </section>
+
+        <section id="form-section">
+            <h2>Add Transaction</h2>
+            <form id="transaction-form">
+                <input type="number" id="amount" placeholder="Rp. Enter amount..." required>
+                <input type="text" id="description" placeholder="Enter description..." required>
+                <button type="button" id="income-button">Income</button>
+                <button type="button" id="expense-button">Expense</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
