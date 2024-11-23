@@ -18,6 +18,65 @@
         </nav>
     </header>
 
+    <script>
+        window.onload = function () {
+    // Create the alert modal dynamically
+    const modal = document.createElement('div');
+    modal.id = 'custom-alert';
+    modal.style.cssText = `
+        display: flex; 
+        position: fixed; 
+        z-index: 1000; 
+        left: 0; 
+        top: 0; 
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(0, 0, 0, 0.8); 
+        justify-content: center; 
+        align-items: center; 
+    `;
+
+    // Modal content
+    modal.innerHTML = `
+        <div style="
+            background-color: #2f2f2f; 
+            color: whitesmoke; 
+            padding: 20px; 
+            border-radius: 10px; 
+            width: 80%; 
+            max-width: 500px; 
+            text-align: center; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);">
+            <h2 style="color: whitesmoke; font-size: 24px; margin-bottom: 15px;">Welcome to Money Manager!</h2>
+            <p>Developed by Hanifa Al Fatih, a student of Sriwijaya University FKIP S1 Pendidikan Bahasa Inggris.</p>
+            <br>
+            <p><strong>Note:</strong> Keep this in mind! This Money Manager is using your local browser storage. This means if you change or reset your browser/device, everything on this web will change.</p>
+            <p>Report bugs by privately messaging me!</p>
+            <button id="close-alert" style="
+                padding: 10px 20px; 
+                font-size: 16px; 
+                color: #fff; 
+                background-color: black; 
+                border: none; 
+                border-radius: 5px; 
+                cursor: pointer; 
+                transition: background-color 0.3s;">
+                Got it!
+            </button>
+        </div>
+    `;
+
+    // Add the modal to the document body
+    document.body.appendChild(modal);
+
+    // Close the modal on button click
+    document.getElementById('close-alert').addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+};
+
+    </script>
+
     <main>
         <section id="history-section">
             <h2>History</h2>
@@ -27,7 +86,7 @@
         <section id="form-section">
             <h2>Add Transaction</h2>
             <form id="transaction-form">
-                <input type="number" id="amount" placeholder="Rp. Enter amount..." required>
+                <input class="amount" type="number" id="amount" placeholder="Enter amount..." required>
                 <input type="text" id="description" placeholder="Enter description..." required>
                 <button type="button" id="income-button">Income</button>
                 <button type="button" id="expense-button">Expense</button>
@@ -37,4 +96,23 @@
 
     <script src="script.js"></script>
 </body>
+<footer>
+    <p>&copy; 2024 Hanifa Al Fatih, Money Manager.</p>
+    <button id="reset-button" class="reset">Reset Data</button>
+    <script>
+                    // Reset Button Functionality
+        const resetButton = document.getElementById('reset-button');
+
+        resetButton.addEventListener('click', () => {
+            const confirmReset = confirm(
+                "Are you sure you want to reset all data? This action cannot be undone."
+            );
+            if (confirmReset) {
+                localStorage.clear(); // Clears all localStorage data
+                alert("All data has been reset.");
+                location.reload(); // Refreshes the page to apply changes
+            }
+        });
+    </script>
+</footer>
 </html>

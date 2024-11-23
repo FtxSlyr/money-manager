@@ -114,6 +114,12 @@ form input {
     border: none;
 }
 
+.amount {
+    padding-left: 40px; /* Add space for the Rp text */
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 11"%3E%3Ctext x="1" y="6.5" font-size="5" font-family="" fill="black"%3ERp.%3C/text%3E%3C/svg%3E') no-repeat scroll 5px 50%;
+    background-color: white;
+}
+
 form button {
     padding: 10px;
     font-size: 16px;
@@ -131,6 +137,39 @@ form button#income-button:hover {
 
 form button#expense-button:hover {
     background-color: red;
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #121212; /* Dark background for contrast */
+    color: whitesmoke;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Footer reset button */
+footer .reset {
+    padding: 8px 15px;
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+footer .reset:hover {
+    background-color: darkred;
 }
 
 /* Mobile Optimization */
